@@ -1,0 +1,53 @@
+{
+  "name": "hacker-feeds-cli",
+  "version": "0.0.1",
+  "description": "A command line tool for hacker news & product hunt feeds.",
+  "main": "index.js",
+  "bin": {
+    "hacker": "bin/main.js",
+    "hn": "bin/main.js",
+    "hf": "bin/main.js"
+  },
+  "scripts": {
+    "format": "prettier --write '**/*.{json,js,md,yml}'",
+    "pretty-quick": "pretty-quick",
+    "prepublishOnly": "np --no-cleanup --no-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mayandev/hacker-feeds-cli"
+  },
+  "keywords": [
+    "hacker news",
+    "hacker",
+    "feeds",
+    "producthunt",
+    "cli"
+  ],
+  "author": "phillzou <phillzou@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayandev/hacker-feeds-cli/issues"
+  },
+  "homepage": "https://github.com/Mayandev/hacker-feeds-cli#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "command-exists": "^1.2.9",
+    "commander": "^6.2.1",
+    "execa": "^5.0.0",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "husky": "^4.3.7",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "np": "^7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
