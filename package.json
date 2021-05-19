@@ -1,11 +1,10 @@
 {
   "name": "hacker-feeds-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A command line tool for hacker news & product hunt feeds.",
   "main": "index.js",
   "bin": {
-    "hacker": "bin/main.js",
-    "hn": "bin/main.js",
+    "hfeeds": "bin/main.js",
     "hf": "bin/main.js"
   },
   "scripts": {
@@ -36,7 +35,8 @@
     "command-exists": "^1.2.9",
     "commander": "^6.2.1",
     "execa": "^5.0.0",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "ora": "^5.4.0"
   },
   "devDependencies": {
     "eslint": "^7.17.0",

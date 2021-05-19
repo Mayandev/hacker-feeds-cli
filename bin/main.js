@@ -2,12 +2,13 @@
 const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
-const fetchHackerNews = require('../utils/fetchHackerNews');
+const ora = require('ora');
+const { fetchHackerNews, fetchProductHunt } = require('../utils');
 
 program.version(pkg.version).usage('<command> [options]');
 
 program.on('--help', () => {
-  console.log(chalk.green('Template output'));
+  console.log(chalk.green('Hacker feeds usage'));
 });
 
 // get hacker news feeds
@@ -22,10 +23,17 @@ program
     }
   });
 
+// get product hunt feeds
 program
   .command('product')
   .description('get the product hunt list')
-  .option('--param', 'Set product hubt param');
+  .option('--param', 'Set product hunt param')
+  .action((args) => {
+    // input "> hacker news"
+    if (process.argv.length === 3) {
+      fetchProductHunt();
+    }
+  });
 
 program.parse(process.argv);
 
