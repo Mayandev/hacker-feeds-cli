@@ -20,10 +20,15 @@ A command line tool for hacker news & product hunt feeds.
 > hf product
 ```
 
+![hacker-feeds-cli-1](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hacker-feeds-cli-1.png)
+
+![hacker-feeds-cli-1](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hacker-feeds-cli-1.png)
+
 ## TODO
 
 - [ ] Add i18n config
 - [ ] Accept input param for pagination
+- [ ] Add more resource
 
 ## API References
 
