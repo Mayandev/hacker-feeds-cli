@@ -13,6 +13,7 @@ async function fetchHackerNews(start = 0, end = 10) {
       .map((itemId) => axios.get(`${HackerNewsBaseUrl}item/${itemId}.json`));
     const result = await Promise.all(promises);
     spinner.stop();
+    console.log(chalk.cyan('📰 Hacker News List'));
     console.log('------------------------------------');
     const news = result
       .map((item) => item.data)

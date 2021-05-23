@@ -3,11 +3,13 @@ const chalk = require('chalk');
 const ora = require('ora');
 const { PH_ACCESS_TOKEN } = require('../common/config');
 const { ProductHuntBaseUrl } = require('../common/const');
-const { formatDate } = require('./format');
+const { formatDate, getAfterNDayDate, getBeforeNDayDate } = require('./date');
 
-const defaultDate = formatDate();
+const defaultDate = formatDate(new Date());
 
-async function fetchProductHunt(count = 10, time = defaultDate) {
+async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
+  const beforeDay = getBeforeNDayDate(time, past);
+  const afterOneDay = getAfterNDayDate(time, 1);
   const reqOptions = {
     url: ProductHuntBaseUrl,
     headers: {
@@ -18,7 +20,7 @@ async function fetchProductHunt(count = 10, time = defaultDate) {
     method: 'POST',
     mode: 'cors',
     data: JSON.stringify({
-      query: `query { posts(first: ${count}, order: VOTES, postedAfter: "${time}") {
+      query: `query { posts(first: ${count}, order: VOTES, postedAfter: "${beforeDay}", postedBefore: "${afterOneDay}") {
           edges{
             cursor
             node{
@@ -42,17 +44,23 @@ async function fetchProductHunt(count = 10, time = defaultDate) {
     const { data } = await axios(reqOptions);
     const products = data.data.posts.edges || [];
     spinner.stop();
+    if (products.length === 0) {
+      spinner.fail('The ranking has not yet been updated, you can check the past data.');
+      return;
+    }
+    console.log(chalk.cyan(`🔮 ${time} Product Hunt List`));
     console.log('----------------------------------------------');
     products
       .map((product) => product.node)
-      .forEach(({ name, description, url, website }) => {
-        console.log(chalk.bold('Name: ', chalk.green(name)));
-        console.log('Description: ', chalk.green(description));
-        console.log('Product URL: ', chalk.cyan(url.split('?')[0]));
-        console.log('Website: ', chalk.cyan(website.split('?')[0]));
+      .forEach(({ name, description, url, website, votesCount }) => {
+        console.log(chalk.bold('Name: ', chalk.green(name)), '| Votes:', chalk.green(votesCount));
+        console.log('✍️  Description: ', chalk.green(description));
+        console.log('🔗 Product URL: ', chalk.cyan(url.split('?')[0]));
+        console.log('🌍 Website: ', chalk.cyan(website.split('?')[0]));
         console.log('----------------------------------------------');
       });
   } catch (error) {
+    console.log(error);
     spinner.fail('Something error, You can contact the developer. Mail to <phillzou@gmail.com>');
   }
 }
