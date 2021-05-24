@@ -26,6 +26,7 @@ A command line tool for hacker news & product hunt feeds.
 
 ## TODO
 
+- [ ] Hyper link support
 - [ ] Add i18n config
 - [ ] Accept input param for pagination
 - [ ] Add more resource
