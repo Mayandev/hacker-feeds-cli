@@ -26,7 +26,7 @@ program
   .command('product')
   .description('get the product hunt list')
   .option('-c, --count <count n>', 'set product list count')
-  .option('-p, --past <past n days>', 'get top n list')
+  .option('-p, --past <past n days>', 'get past n day list')
   .action((args) => {
     const { past = 0, count = 10 } = args;
     fetchProductHunt(count, past);
