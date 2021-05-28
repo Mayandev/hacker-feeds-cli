@@ -3,12 +3,16 @@ const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
 const ora = require('ora');
-const { fetchHackerNews, fetchProductHunt } = require('../utils');
+const { fetchHackerNews, fetchProductHunt, fetchGitHubTrending } = require('../utils');
 
 program.version(pkg.version).usage('<command> [options]');
 
 program.on('--help', () => {
-  console.log(chalk.green('Hacker feeds usage'));
+  console.log(
+    chalk.green(`
+Example:
+  $ hfeeds --help`),
+  );
 });
 
 // get hacker news feeds
@@ -30,6 +34,28 @@ program
   .action((args) => {
     const { past = 0, count = 10 } = args;
     fetchProductHunt(count, past);
+  });
+
+// get github feeds
+program
+  .command('github')
+  .description('get the github trending list')
+  .option('-s, --since <optional>', 'daily, weekly and monthly')
+  .option('-l, --lang <optional>', 'set programing language type')
+  .action((args) => {
+    const { since = 'daily', lang = '' } = args;
+    fetchGitHubTrending(since, lang);
+  });
+
+// settings
+program
+  .command('config')
+  .description('config cli')
+  .option('-l, --lang <optional>', 'config cli languag, translate content')
+  .action((args) => {
+    console.log(args);
+    // with params, output help
+    // const { lang = 'en' } = args;
   });
 
 program.parse(process.argv);
