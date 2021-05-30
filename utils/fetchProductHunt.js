@@ -51,7 +51,7 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
     spinner.stop();
     console.log(
       chalk.green(`-----------------------------------------
-          🔮 ${t('product.title')}          
+          🔮 ${t('ph.title')}          
 -----------------------------------------
     `),
     );
@@ -59,13 +59,13 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
       .map((product) => product.node)
       .forEach(({ name, description, url, website, votesCount }) => {
         console.log(
-          chalk.bold(`${t('ph.name')}: `, chalk.green(name)),
-          `| ${ph.votes}:`,
-          chalk.green(votesCount),
+          chalk.bold(`${t('ph.name')}: `, chalk.cyan(name)),
+          `| ${t('ph.votes')}:`,
+          chalk.cyan(votesCount),
         );
-        console.log(`${t('ph.name')}: `, chalk.green(description));
-        console.log(`${t('ph.url')}: `, chalk.cyan(url.split('?')[0]));
-        console.log(`${t('ph.website')}: `, chalk.cyan(website.split('?')[0]));
+        console.log(`${t('ph.desc')}: `, chalk.green(description));
+        console.log(`${t('ph.url')}: `, chalk.dim(url.split('?')[0]));
+        console.log(`${t('ph.website')}: `, chalk.dim(website.split('?')[0]));
         console.log('----------------------------------------------');
       });
   } catch (error) {
