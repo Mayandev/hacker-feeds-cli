@@ -40,11 +40,7 @@ Input sub-command `config` to config cli language.
   ZH（简体中文）
 ```
 
-Current support:
-
-- English
-- 简体中文
-- ...
+![hfeeds-4](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeeds-4.png)
 
 ## TODO
 
