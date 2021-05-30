@@ -49,6 +49,12 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
       return;
     }
     spinner.stop();
+    console.log(
+      chalk.green(`-----------------------------------------
+          🔮 ${t('product.title')}          
+-----------------------------------------
+    `),
+    );
     products
       .map((product) => product.node)
       .forEach(({ name, description, url, website, votesCount }) => {

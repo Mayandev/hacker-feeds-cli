@@ -6,6 +6,12 @@ const zh = {
     link: '链接',
     lang: '语言',
     star: '星标',
+    author: '作者',
+    addedStar: {
+      weekly: '本周新增星标',
+      daily: '本日新增星标',
+      monthly: '本月新增星标',
+    },
   },
   hn: {
     outputTitle: 'Hacker News 新闻',

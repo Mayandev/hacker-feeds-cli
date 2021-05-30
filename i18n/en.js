@@ -6,6 +6,12 @@ const en = {
     link: 'Link',
     lang: 'Language',
     star: 'Stars',
+    author: '作者',
+    addedStar: {
+      weekly: 'stars this week',
+      daily: 'stars this day',
+      monthly: 'stars this month',
+    },
   },
   hn: {
     outputTitle: 'Hacker News List',
