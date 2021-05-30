@@ -15,7 +15,7 @@ Example:
 
 // get hacker news feeds
 program
-  .command('hn')
+  .command('news')
   .description(t('program.hnDesc'))
   .option('-t, --top <top n>', t('program.hnTop'))
   .action((args) => {
@@ -25,7 +25,7 @@ program
 
 // get product hunt feeds
 program
-  .command('ph')
+  .command('product')
   .description(t('program.phDesc'))
   .option('-c, --count <count n>', t('program.phCount'))
   .option('-p, --past <past n days>', t('program.phPast'))
@@ -36,7 +36,7 @@ program
 
 // get github feeds
 program
-  .command('gh')
+  .command('github')
   .description(t('program.ghDesc'))
   .option('-s, --since <optional>', t('program.ghSince'))
   .option('-l, --lang <optional>', t('program.ghLang'))

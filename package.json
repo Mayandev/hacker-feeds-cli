@@ -1,6 +1,6 @@
 {
   "name": "hacker-feeds-cli",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "A command line tool for hacker news & product hunt feeds.",
   "main": "index.js",
   "bin": {

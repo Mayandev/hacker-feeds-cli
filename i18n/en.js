@@ -46,6 +46,10 @@ const en = {
     help: 'display help for command',
     version: 'output the version number',
   },
+  config: {
+    saved: 'Config Saved',
+    failed: 'Config Failed',
+  },
 };
 
 module.exports = en;

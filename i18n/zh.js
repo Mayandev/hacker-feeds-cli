@@ -46,6 +46,10 @@ const zh = {
     help: '显示帮助',
     version: '显示版本号',
   },
+  config: {
+    saved: '配置成功',
+    failed: '配置失败',
+  },
 };
 
 module.exports = zh;

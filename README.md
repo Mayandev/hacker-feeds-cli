@@ -2,7 +2,7 @@
 
 # 📰 hacker-feeds-cli
 
-A command line tool for hacker news & product hunt feeds.
+A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product Hunt](https://www.producthunt.com/) and [GitHub Trending](http://github.com/) feeds.
 
 </div>
 
@@ -11,23 +11,40 @@ A command line tool for hacker news & product hunt feeds.
 ```bash
 # install
 > npm install -g hacker-feeds-cli
-# show top 10 hacker news
-> hfeeds news
-# show top 10 product info
-> hfeeds product
-# you can also use shortcut command
-> hf news
-> hf product
+# command option
+> npm help
 ```
 
-![hacker-feeds-cli-1](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hacker-feeds-cli-1.png)
+![hfeed-3](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeed-3.png)
 
-![hacker-feeds-cli-2](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hacker-feeds-cli-2.png)
+## Resource Support
+
+- [GitHub](http://github.com/)
+- [Hacker News](https://news.ycombinator.com/)
+- [Product Hunt](https://www.producthunt.com/)
+
+## Language Support
+
+Input sub-command `config` to config cli language.
+
+```bash
+> feeds config
+? Please select a language(Default EN):  (Use arrow keys)
+❯ EN（English）
+  ZH（简体中文）
+```
+
+Current support:
+
+- English
+- 简体中文
+- ...
 
 ## TODO
 
+- [x] i18n support
 - [ ] Hyper link support
-- [ ] Add i18n config
+- [ ] Support Translate
 - [ ] Accept input param for pagination
 - [ ] Add more resource
 

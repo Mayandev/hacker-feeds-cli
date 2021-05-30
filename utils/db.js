@@ -19,15 +19,16 @@ const config = {
     }
   },
   async write(options = {}, path = configPath) {
+    const t = require('./i18n');
     const originOptions = await config.load(path);
     const mergedOptions = { ...originOptions, ...options };
     const content = JSON.stringify(mergedOptions);
     try {
       fs.writeFileSync(path, content);
-      console.log(chalk.green('Saved!'));
+      console.log(chalk.green(`✅ ${t('config.saved')}!`));
       return;
     } catch (error) {
-      console.log(chalk.red('Failed!'));
+      console.log(chalk.red(`${t('config.failed')}!`));
     }
     return fs.writeFileSync(path, content);
   },
