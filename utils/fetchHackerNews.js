@@ -2,10 +2,11 @@ const axios = require('axios');
 const chalk = require('chalk');
 const ora = require('ora');
 const { HackerNewsBaseUrl } = require('../common/const');
+const t = require('./i18n');
 
 async function fetchHackerNews(start = 0, end = 10) {
   const url = `${HackerNewsBaseUrl}topstories.json`;
-  const spinner = ora('Fetching feeds...').start();
+  const spinner = ora(t('spinner.load')).start();
   try {
     const { data = [] } = await axios.get(url);
     const promises = data
@@ -13,19 +14,24 @@ async function fetchHackerNews(start = 0, end = 10) {
       .map((itemId) => axios.get(`${HackerNewsBaseUrl}item/${itemId}.json`));
     const result = await Promise.all(promises);
     spinner.stop();
-    console.log(chalk.cyan('📰 Hacker News List'));
-    console.log('------------------------------------');
+    console.log(
+      chalk.cyan(`-----------------------------------------
+              📰 ${t('hn.outputTitle')}          
+-----------------------------------------
+    `),
+    );
     const news = result
       .map((item) => item.data)
       .forEach(({ title, url }) => {
         // output list
-        console.log('Title: ', chalk.green(title));
-        console.log('URL: ', chalk.cyan(url));
+        console.log(`${t('hn.title')}: `, chalk.green(title));
+        console.log(`${t('hn.url')}: `, chalk.dim(url));
         console.log('------------------------------------');
       });
     return news;
   } catch (error) {
-    spinner.fail('Something error, You can contact the developer. Mail to <phillzou@gmail.com>');
+    console.log(error);
+    spinner.fail(t('spinner.fail'));
   }
 }
 

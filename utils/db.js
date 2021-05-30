@@ -5,7 +5,7 @@ const fs = require('fs');
 const configPath = path.resolve(homedir, '.hfrc');
 
 const config = {
-  async load(path = configPath) {
+  load(path = configPath) {
     const conf = {};
     if (fs.existsSync(path) && fs.statSync(path).isFile()) {
       const content = fs.readFileSync(path, 'utf-8');

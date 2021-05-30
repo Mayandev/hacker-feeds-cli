@@ -2,24 +2,22 @@
 const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
-const ora = require('ora');
-const { fetchHackerNews, fetchProductHunt, fetchGitHubTrending } = require('../utils');
-
-program.version(pkg.version).usage('<command> [options]');
+const inquirer = require('inquirer');
+const { fetchHackerNews, fetchProductHunt, fetchGitHubTrending, config, t } = require('../utils');
 
 program.on('--help', () => {
   console.log(
     chalk.green(`
 Example:
-  $ hfeeds --help`),
+  $ hfeeds news`),
   );
 });
 
 // get hacker news feeds
 program
   .command('news')
-  .description('get the hacker news list')
-  .option('-t, --top <top n>', 'get top n list')
+  .description(t('program.hnDesc'))
+  .option('-t, --top <top n>', t('program.hnTop'))
   .action((args) => {
     const { top = 10 } = args;
     fetchHackerNews(0, top);
@@ -28,9 +26,9 @@ program
 // get product hunt feeds
 program
   .command('product')
-  .description('get the product hunt list')
-  .option('-c, --count <count n>', 'set product list count')
-  .option('-p, --past <past n days>', 'get top n list')
+  .description(t('program.phDesc'))
+  .option('-c, --count <count n>', t('program.phCount'))
+  .option('-p, --past <past n days>', t('program.phPast'))
   .action((args) => {
     const { past = 0, count = 10 } = args;
     fetchProductHunt(count, past);
@@ -39,9 +37,9 @@ program
 // get github feeds
 program
   .command('github')
-  .description('get the github trending list')
-  .option('-s, --since <optional>', 'daily, weekly and monthly')
-  .option('-l, --lang <optional>', 'set programing language type')
+  .description(t('program.ghDesc'))
+  .option('-s, --since <optional>', t('program.ghSince'))
+  .option('-l, --lang <optional>', t('program.ghLang'))
   .action((args) => {
     const { since = 'daily', lang = '' } = args;
     fetchGitHubTrending(since, lang);
@@ -50,17 +48,41 @@ program
 // settings
 program
   .command('config')
-  .description('config cli')
-  .option('-l, --lang <optional>', 'config cli languag, translate content')
-  .action((args) => {
+  .description(t('program.configDesc'))
+  .option('-l, --lang <optional>', t('program.configLang'))
+  .action(({ args }) => {
     console.log(args);
-    // with params, output help
-    // const { lang = 'en' } = args;
+    if (args.length === 0) {
+      setConfig();
+      return;
+    }
+    const { lang = 'en' } = args;
+    config.write({ lang });
   });
+
+program.addHelpCommand('help [command]', t('program.help'));
+program.helpOption('-h, --help', t('program.help'));
+program.version(pkg.version, '-v, --version', t('program.version'));
 
 program.parse(process.argv);
 
 // trigger without param
 if (!process.argv.slice(2).length) {
   program.outputHelp();
+}
+
+async function setConfig() {
+  // inquire for a api link
+  const { lang } = await inquirer.prompt([
+    {
+      type: 'list',
+      message: t('program.langConfig'),
+      name: 'lang',
+      choices: [
+        { name: 'EN（English）', value: 'en' },
+        { name: 'ZH（简体中文）', value: 'zh' },
+      ],
+    },
+  ]);
+  config.write({ lang });
 }

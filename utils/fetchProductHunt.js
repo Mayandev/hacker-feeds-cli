@@ -4,6 +4,7 @@ const ora = require('ora');
 const { PH_ACCESS_TOKEN } = require('../common/config');
 const { ProductHuntBaseUrl } = require('../common/const');
 const { formatDate, getAfterNDayDate, getBeforeNDayDate } = require('./date');
+const t = require('./i18n');
 
 const defaultDate = formatDate(new Date());
 
@@ -39,29 +40,31 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
 }}}}`,
     }),
   };
-  const spinner = ora('Fetching feeds...').start();
+  const spinner = ora(t('spinner.load')).start();
   try {
     const { data } = await axios(reqOptions);
     const products = data.data.posts.edges || [];
-    spinner.stop();
     if (products.length === 0) {
-      spinner.fail('The ranking has not yet been updated, you can check the past data.');
+      spinner.fail(t('spinner.unUpdate'));
       return;
     }
-    console.log(chalk.cyan(`🔮 ${time} Product Hunt List`));
-    console.log('----------------------------------------------');
+    spinner.stop();
     products
       .map((product) => product.node)
       .forEach(({ name, description, url, website, votesCount }) => {
-        console.log(chalk.bold('Name: ', chalk.green(name)), '| Votes:', chalk.green(votesCount));
-        console.log('✍️  Description: ', chalk.green(description));
-        console.log('🔗 Product URL: ', chalk.cyan(url.split('?')[0]));
-        console.log('🌍 Website: ', chalk.cyan(website.split('?')[0]));
+        console.log(
+          chalk.bold(`${t('ph.name')}: `, chalk.green(name)),
+          `| ${ph.votes}:`,
+          chalk.green(votesCount),
+        );
+        console.log(`${t('ph.name')}: `, chalk.green(description));
+        console.log(`${t('ph.url')}: `, chalk.cyan(url.split('?')[0]));
+        console.log(`${t('ph.website')}: `, chalk.cyan(website.split('?')[0]));
         console.log('----------------------------------------------');
       });
   } catch (error) {
     console.log(error);
-    spinner.fail('Something error, You can contact the developer. Mail to <phillzou@gmail.com>');
+    spinner.fail(t('spinner.fail'));
   }
 }
 
