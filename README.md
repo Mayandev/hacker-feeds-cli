@@ -23,6 +23,12 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 - [Hacker News](https://news.ycombinator.com/)
 - [Product Hunt](https://www.producthunt.com/)
 
+| Resource | Sub Command | Parameters | Screenshot |
+| --- | --- | --- | --- |
+| [GitHub](http://github.com/) | `github` | `-l, --lang`<br>`-s, --since` | ![image-20210530161456461](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210530161456461.png) |
+| [Product Hunt](https://www.producthunt.com/) | `product` | `-c, --count`<br>`-p, --past` | ![image-20210530163127103](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210530163127103.png) |
+| [Hacker News](https://news.ycombinator.com/) | `news` | `-t --top` | ![image-20210530163347458](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/image-20210530163347458.png) |
+
 ## Language Support
 
 Input sub-command `config` to config cli language.
@@ -43,10 +49,10 @@ Current support:
 ## TODO
 
 - [x] i18n support
+- [x] Accept resouce param
 - [ ] Hyper link support
 - [ ] Support Translate
-- [ ] Accept input param for pagination
-- [ ] Add more resource
+- [ ] Add more resource（Reddit、V2ex）
 
 ## API References
 

@@ -6,11 +6,11 @@ const en = {
     link: 'Link',
     lang: 'Language',
     star: 'Stars',
-    author: '作者',
+    author: 'Author',
     addedStar: {
-      weekly: 'stars this week',
-      daily: 'stars this day',
-      monthly: 'stars this month',
+      weekly: 'Stars this week',
+      daily: 'Stars this day',
+      monthly: 'Stars this month',
     },
   },
   hn: {

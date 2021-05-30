@@ -113,8 +113,6 @@ async function fetchGitHubTrending(since = 'daily', language = '') {
         chalk.cyan(stars),
         ` ｜ ${t(`github.addedStar.${since}`)}: `,
         chalk.cyan(added_stars),
-        ` | ${t('github.author')}: `,
-        chalk.cyan(author),
       );
       desc && console.log(`${t('github.desc')}: `, chalk.green(desc));
       console.log(`${t('github.link')}: `, chalk.dim(repo_link));
