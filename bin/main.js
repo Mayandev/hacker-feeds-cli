@@ -9,7 +9,7 @@ program.on('--help', () => {
   console.log(
     chalk.green(`
 Example:
-  $ hfeeds hn`),
+  $ hfeeds github`),
   );
 });
 
