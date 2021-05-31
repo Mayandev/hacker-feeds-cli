@@ -14,7 +14,9 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 # install
 > npm install -g hacker-feeds-cli
 # command option
-> npm help
+> hfeeds help
+# hf for short
+> hf news
 ```
 
 ![hfeed-3](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeed-3.png)
@@ -38,8 +40,8 @@ Input sub-command `config` to config cli language.
 ```bash
 > feeds config
 ? Please select a language(Default EN):  (Use arrow keys)
-❯ EN（English）
-  ZH（简体中文）
+  EN（English）
+❯ ZH（简体中文）
 ```
 
 ![hfeeds-4](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeeds-4.png)
