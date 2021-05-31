@@ -33,12 +33,10 @@
     "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.9",
-    "command-exists": "^1.2.9",
     "commander": "^6.2.1",
     "execa": "^5.0.0",
     "inquirer": "^8.1.0",
     "lodash": "^4.17.21",
-    "minimist": "^1.2.5",
     "ora": "^5.4.0"
   },
   "devDependencies": {
