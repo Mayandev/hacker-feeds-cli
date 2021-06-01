@@ -4,7 +4,7 @@
 
 A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product Hunt](https://www.producthunt.com/) and [GitHub Trending](http://github.com/trending) feeds.
 
-[![](https://shields.io/badge/Reddit-FF4500?logo=reddit&style=flat-square&logoColor=white)](https://www.reddit.com/)[![](https://shields.io/badge/GitHub%20Trending-black?logo=GitHub&style=flat-square&logoColor=white)](http://github.com/trending) [![](https://shields.io/badge/Hacker%20News-f0652f?logo=y%20combinator&style=flat-square&logoColor=white)](https://news.ycombinator.com/) [![](https://shields.io/badge/Product%20Hunt-da552f?logo=Product%20Hunt&style=flat-square&logoColor=white)](https://www.producthunt.com/)
+[![](https://shields.io/badge/Reddit-FF4500?logo=reddit&style=flat-square&logoColor=white)](https://www.reddit.com/) [![](https://shields.io/badge/GitHub%20Trending-black?logo=GitHub&style=flat-square&logoColor=white)](http://github.com/trending) [![](https://shields.io/badge/Hacker%20News-f0652f?logo=y%20combinator&style=flat-square&logoColor=white)](https://news.ycombinator.com/) [![](https://shields.io/badge/Product%20Hunt-da552f?logo=Product%20Hunt&style=flat-square&logoColor=white)](https://www.producthunt.com/)
 
 </div>
 
