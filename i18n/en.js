@@ -26,6 +26,15 @@ const en = {
     website: 'Website',
     votes: 'Votes',
   },
+  reddit: {
+    title: 'Reddit List',
+    postName: 'Title',
+    content: 'Content',
+    comment: 'Comment',
+    url: 'Link',
+    votes: 'Votes',
+    topic: 'Topic',
+  },
   spinner: {
     load: 'Fetching feeds...',
     fail: 'Something error, You can contact the developer. Mail to <phillzou@gmail.com>',
@@ -45,6 +54,9 @@ const en = {
     langConfig: 'Please select a language(Default EN): ',
     help: 'display help for command',
     version: 'output the version number',
+    redditDesc: 'get reddit post list',
+    redditTopic: "get topic list, default 'popular'",
+    redditSort: 'top, best, new and hot, default hot',
   },
   config: {
     saved: 'Config Saved',

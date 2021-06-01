@@ -3,7 +3,14 @@ const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
 const inquirer = require('inquirer');
-const { fetchHackerNews, fetchProductHunt, fetchGitHubTrending, config, t } = require('../utils');
+const {
+  fetchHackerNews,
+  fetchProductHunt,
+  fetchGitHubTrending,
+  fetchReddit,
+  config,
+  t,
+} = require('../utils');
 
 program.on('--help', () => {
   console.log(
@@ -12,38 +19,6 @@ Example:
   $ hfeeds github`),
   );
 });
-
-// get hacker news feeds
-program
-  .command('news')
-  .description(t('program.hnDesc'))
-  .option('-t, --top <top n>', t('program.hnTop'))
-  .action((args) => {
-    const { top = 10 } = args;
-    fetchHackerNews(0, top);
-  });
-
-// get product hunt feeds
-program
-  .command('product')
-  .description(t('program.phDesc'))
-  .option('-c, --count <count n>', t('program.phCount'))
-  .option('-p, --past <past n days>', t('program.phPast'))
-  .action((args) => {
-    const { past = 0, count = 10 } = args;
-    fetchProductHunt(count, past);
-  });
-
-// get github feeds
-program
-  .command('github')
-  .description(t('program.ghDesc'))
-  .option('-s, --since <optional>', t('program.ghSince'))
-  .option('-l, --lang <optional>', t('program.ghLang'))
-  .action((args) => {
-    const { since = 'daily', lang = '' } = args;
-    fetchGitHubTrending(since, lang);
-  });
 
 // settings
 program
@@ -58,6 +33,49 @@ program
     }
     const { lang = 'en' } = args;
     config.write({ lang });
+  });
+
+// get github feeds
+program
+  .command('github')
+  .description(t('program.ghDesc'))
+  .option('-s, --since <optional>', t('program.ghSince'))
+  .option('-l, --lang <optional>', t('program.ghLang'))
+  .action((args) => {
+    const { since = 'daily', lang = '' } = args;
+    fetchGitHubTrending(since, lang);
+  });
+
+// get hacker news feeds
+program
+  .command('news')
+  .description(t('program.hnDesc'))
+  .option('-t, --top <optional>', t('program.hnTop'))
+  .action((args) => {
+    const { top = 10 } = args;
+    fetchHackerNews(0, top);
+  });
+
+// get product hunt feeds
+program
+  .command('product')
+  .description(t('program.phDesc'))
+  .option('-c, --count <optional>', t('program.phCount'))
+  .option('-p, --past <optional>', t('program.phPast'))
+  .action((args) => {
+    const { past = 0, count = 10 } = args;
+    fetchProductHunt(count, past);
+  });
+
+// get reddit feeds
+program
+  .command('reddit')
+  .description(t('program.redditDesc'))
+  .option('-t, --topic <optional>', t('program.redditTopic'))
+  .option('-s, --sort <optional>', t('program.redditSort'))
+  .action((args) => {
+    const { topic, sort } = args;
+    fetchReddit(sort, topic);
   });
 
 program.addHelpCommand('help [command]', t('program.help'));

@@ -26,6 +26,15 @@ const zh = {
     website: '产品网址',
     votes: '投票',
   },
+  reddit: {
+    title: 'Reddit 榜单列表',
+    postName: '标题',
+    content: '内容',
+    comment: '评论',
+    url: '链接',
+    votes: '投票',
+    topic: '话题',
+  },
   spinner: {
     load: '数据拉取中...',
     fail: '程序错误, 你可以发送邮件至 <phillzou@gmail.com> 联系开发者',
@@ -45,6 +54,9 @@ const zh = {
     langConfig: '请选择一种语言：',
     help: '显示帮助',
     version: '显示版本号',
+    redditDesc: '获取 Reddit 信息列表',
+    redditTopic: "获取相关话题列表，默认话题 'popular'",
+    redditSort: '排序方式，可支持参数：top，best，new 和 hot，默认为 hot',
   },
   config: {
     saved: '配置成功',

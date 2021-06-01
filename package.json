@@ -1,6 +1,6 @@
 {
   "name": "hacker-feeds-cli",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "A command line tool for hacker news & product hunt feeds.",
   "main": "index.js",
   "bin": {
@@ -35,6 +35,7 @@
     "cheerio": "^1.0.0-rc.9",
     "commander": "^6.2.1",
     "execa": "^5.0.0",
+    "he": "^1.2.0",
     "inquirer": "^8.1.0",
     "lodash": "^4.17.21",
     "ora": "^5.4.0"
