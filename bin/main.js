@@ -27,7 +27,6 @@ program
   .description(t('program.configDesc'))
   .option('-l, --lang <optional>', t('program.configLang'))
   .action(({ args }) => {
-    console.log(args);
     if (args.length === 0) {
       setConfig();
       return;
