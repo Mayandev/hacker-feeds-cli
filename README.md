@@ -17,9 +17,11 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 > hfeeds help
 # hf for short
 > hf news
+# config cli
+> hf config
 ```
 
-![hfeed-3](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeed-3.png)
+![feeds-cli-6](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/feeds-cli-6.png)
 
 ## Resource Support
 
@@ -48,7 +50,7 @@ Input sub-command `config` to config cli language.
 ❯ ZH（简体中文）
 ```
 
-![hfeeds-4](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/hfeeds-4.png)
+![feeds-cli-7](https://mayandev.oss-cn-hangzhou.aliyuncs.com/uPic/feeds-cli-7.png)
 
 ## TODO
 
