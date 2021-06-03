@@ -27,13 +27,22 @@ const zh = {
     votes: '投票',
   },
   reddit: {
-    title: 'Reddit 榜单列表',
+    title: 'Reddit 帖子',
     postName: '标题',
     content: '内容',
     comment: '评论',
     url: '链接',
     votes: '投票',
     topic: '话题',
+  },
+  v2ex: {
+    title: 'V2EX 帖子',
+    postName: '标题',
+    comment: '评论',
+    content: '详情',
+    url: '链接',
+    votes: 'Votes',
+    topic: '节点',
   },
   spinner: {
     load: '数据拉取中...',
@@ -57,6 +66,8 @@ const zh = {
     redditDesc: '获取 Reddit 信息列表',
     redditTopic: "获取相关话题列表，默认话题 'popular'",
     redditSort: '排序方式，可支持参数：top，best，new 和 hot，默认为 hot',
+    v2ex: '获取 V2EX 信息列表',
+    v2exNode: '节点名称: programmer、python、create、macos 等等，默认为 create',
   },
   config: {
     saved: '配置成功',

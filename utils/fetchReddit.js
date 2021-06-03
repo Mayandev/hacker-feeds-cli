@@ -1,5 +1,4 @@
 const axios = require('axios');
-const he = require('he');
 const _ = require('lodash');
 const ora = require('ora');
 const t = require('./i18n');
@@ -40,7 +39,10 @@ async function fetchReddit(sort = 'hot', topic = 'popular') {
       console.log('----------------------------------------------');
     });
     spinner.stop();
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    spinner.fail(t('spinner.fail'));
+  }
 }
 
 module.exports = fetchReddit;

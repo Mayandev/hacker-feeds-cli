@@ -35,6 +35,15 @@ const en = {
     votes: 'Votes',
     topic: 'Topic',
   },
+  v2ex: {
+    title: 'V2EX Feeds List',
+    postName: 'Title',
+    content: 'Content',
+    comment: 'Comment',
+    url: 'Link',
+    votes: 'Votes',
+    topic: 'Node',
+  },
   spinner: {
     load: 'Fetching feeds...',
     fail: 'Something error, You can contact the developer. Mail to <phillzou@gmail.com>',
@@ -57,6 +66,8 @@ const en = {
     redditDesc: 'get reddit post list',
     redditTopic: "get topic list, default 'popular'",
     redditSort: 'top, best, new and hot, default hot',
+    v2ex: 'get v2ex post list',
+    v2exNode: 'node name: programmer, python, create, macos, etc. Default create',
   },
   config: {
     saved: 'Config Saved',

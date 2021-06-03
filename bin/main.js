@@ -8,6 +8,7 @@ const {
   fetchProductHunt,
   fetchGitHubTrending,
   fetchReddit,
+  fetchV2ex,
   config,
   t,
 } = require('../utils');
@@ -65,6 +66,16 @@ program
   .action((args) => {
     const { past = 0, count = 10 } = args;
     fetchProductHunt(count, past);
+  });
+
+// get v2ex feeds
+program
+  .command('v2ex')
+  .description(t('program.v2ex'))
+  .option('-n, --node <optional>', t('program.v2exNode'))
+  .action((args) => {
+    const { node } = args;
+    fetchV2ex(node);
   });
 
 // get reddit feeds
