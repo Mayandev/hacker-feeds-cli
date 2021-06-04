@@ -14,7 +14,7 @@ async function fetchReddit(sort = 'hot', topic = 'popular') {
     spinner.stop();
     console.log(
       chalk.cyan(`-----------------------------------------
-              🤖️ ${t('reddit.title')}          
+              🧬 ${t('reddit.title')}          
 -----------------------------------------
     `),
     );
@@ -25,12 +25,12 @@ async function fetchReddit(sort = 'hot', topic = 'popular') {
       console.log(t('reddit.postName'), ': ', chalk.green(title));
       console.log(
         `${t('reddit.comment')}: `,
-        chalk.cyan(num_comments),
+        chalk.yellow(num_comments),
         ' | ',
         `${t('reddit.votes')}: `,
-        chalk.cyan(ups),
+        chalk.yellow(ups),
         ` | ${t('reddit.topic')}: `,
-        chalk.cyan(subreddit),
+        chalk.yellow(subreddit),
       );
       console.log(t('reddit.url'), ': ', chalk.dim(`${RedditBaseUrl}${permalink}`));
       if (selftext !== '') {
