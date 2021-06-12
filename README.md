@@ -25,7 +25,15 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 
 ## Resource Support
 
-Please make sure your network can access the above website properly.
+Please make sure your network can access the above website properly. You can try pinging the following domains.
+
+```console
+ping github.com
+ping www.v2ex.com
+ping hacker-news.firebaseio.com
+ping api.producthunt.com
+ping www.reddit.com
+```
 
 - [GitHub](http://github.com/)
 - [Hacker News](https://news.ycombinator.com/)
