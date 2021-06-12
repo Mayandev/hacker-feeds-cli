@@ -25,6 +25,8 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 
 ## Resource Support
 
+Please make sure your network can access the above website properly.
+
 - [GitHub](http://github.com/)
 - [Hacker News](https://news.ycombinator.com/)
 - [Product Hunt](https://www.producthunt.com/)
