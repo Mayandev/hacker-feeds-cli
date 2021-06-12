@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-** My Enviroments**
+**My Enviroments**
 
 Device & OS: 
 Termial Client: 
