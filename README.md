@@ -25,7 +25,7 @@ A command line tool for [Hacker News](https://news.ycombinator.com/)、 [Product
 
 ## Resource Support
 
-Please make sure your network can access the above website properly. You can try pinging the following domains.
+Because most of the web servers are located abroad, please make sure your network can access the above website properly. You can try pinging the following domains.
 
 ```console
 ping github.com
