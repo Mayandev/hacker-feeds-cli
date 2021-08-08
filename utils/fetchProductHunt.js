@@ -61,7 +61,7 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
         console.log(
           chalk.bold(`${t('ph.name')}: `, chalk.cyan(name)),
           `| ${t('ph.votes')}:`,
-          chalk.cyan(votesCount),
+          chalk.yellow(votesCount),
         );
         console.log(`${t('ph.desc')}: `, chalk.green(description));
         console.log(`${t('ph.url')}: `, chalk.dim(url.split('?')[0]));
