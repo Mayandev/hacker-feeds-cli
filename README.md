@@ -77,3 +77,4 @@ Input sub-command `config` to config cli language.
 - [GitHub Trending API](https://github.com/huchenme/github-trending-api)
 - [Reddit API](https://www.reddit.com/dev/api/)
 - [V2EX API](https://v2ex.com/p/7v9TEc53)
+
