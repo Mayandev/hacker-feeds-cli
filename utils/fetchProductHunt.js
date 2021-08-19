@@ -60,7 +60,7 @@ async function fetchProductHunt(count = 10, past = 0, time = defaultDate) {
       .forEach(({ name, description, url, website, votesCount }) => {
         console.log(
           chalk.bold(`${t('ph.name')}: `, chalk.cyan(name)),
-          `| ${t('ph.votes')}:`,
+          `| ▲`,
           chalk.yellow(votesCount),
         );
         console.log(`${t('ph.desc')}: `, chalk.green(description));
